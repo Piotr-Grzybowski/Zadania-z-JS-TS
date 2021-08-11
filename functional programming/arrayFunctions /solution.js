@@ -8,7 +8,7 @@ const forEachFn = (array, callback) => {
 };
 
 /**
- * Map method works similar to forEach loop but requires from us to return new modified version of an array
+ * Map method works similar to forEach but returns modified version of an array
  */
 const mapFn = (array, callback) => {
   const newArray = [];
