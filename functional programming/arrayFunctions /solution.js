@@ -39,7 +39,16 @@ const entriesFn = (array) => {
 //TODO
 //Create solution for entriesFn using generator
 
-const filterFn = (array, callback) => {};
+/**
+ * Filter method returns new array with elements which callback returns true
+ */
+const filterFn = (array, callback) => {
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) newArray.push(array[i]);
+  };
+  return newArray;
+};
 
 const reduceFn = (array, callback, inital) => {};
 
