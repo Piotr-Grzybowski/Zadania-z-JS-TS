@@ -18,7 +18,26 @@ const mapFn = (array, callback) => {
   return newArray;
 };
 
-const entriesFn = (array) => {};
+/**
+ * Function entries return iterator object with method next that lets us to access next element
+ * Every element has format {done: false/true, value: [index, value]}
+ * Value of done shows us if iteration is finished or not
+ * Value field has index and value that was in used array under that index
+ */
+const entriesFn = (array) => {
+  const newArray = [];
+
+  for (let index = 0; index < array.length; index++) {
+    newArray.push([index, array[index]]);
+  }
+
+  const iterator = newArray[Symbol.iterator]();
+
+  return iterator;
+};
+
+//TODO
+//Create solution for entriesFn using generator
 
 const filterFn = (array, callback) => {};
 

@@ -1,5 +1,3 @@
-## What do you want me to do this time?
-
 ### Using 'for' and 'while' loops create functions that will work the same way like array methods listed below.
 - [ ] .forEach
 - [ ] .map
