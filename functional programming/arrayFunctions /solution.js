@@ -71,9 +71,18 @@ const reduceFn = (array, callback, initial) => {
  */
 const everyFn = (array, callback) => {
   for (let i = 0; i< array.length; i++) {
-    if (!callback(array[i], i, array)) return false
+    if (!callback(array[i], i, array)) return false;
   }
   return true;
 };
 
-const someFn = (array, callback) => {};
+/**
+ * The some() method tests whether at least one element in the array passes the test implemented by the provided function.
+ * It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false.
+ */
+const someFn = (array, callback) => {
+  for (let i = 0; i< array.length; i++) {
+    if (callback(array[i], i, array)) return true;
+  }
+  return false;
+};
