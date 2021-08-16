@@ -8,13 +8,14 @@ const forEachFn = (array, callback) => {
 };
 
 /**
- * Map method works similar to forEach but returns modified version of an array
+ * Map iterates over the array calling callback functions on every element
+ * It returns new array with modified values
  */
 const mapFn = (array, callback) => {
   const newArray = [];
   for (let i = 0; i < array.length; i++) {
     newArray.push(callback(array[i], i, array));
-  };
+  }
   return newArray;
 };
 
@@ -26,7 +27,6 @@ const mapFn = (array, callback) => {
  */
 const entriesFn = (array) => {
   const newArray = [];
-
   for (let index = 0; index < array.length; index++) {
     newArray.push([index, array[index]]);
   }
@@ -40,17 +40,30 @@ const entriesFn = (array) => {
 //Create solution for entriesFn using generator
 
 /**
- * Filter method returns new array with elements which callback returns true
+ * Filter method works similar to map
+ * The difference is that it returns array only with values that has truthy result called with callback
  */
 const filterFn = (array, callback) => {
   const newArray = [];
   for (let i = 0; i < array.length; i++) {
     if (callback(array[i], i, array)) newArray.push(array[i]);
-  };
+  }
   return newArray;
 };
 
-const reduceFn = (array, callback, inital) => {};
+/**
+ * Reduce method iterates over the array elements the same way like map or filter
+ * The difference is that it has accumulator value that keeps value of callbacks between iterations
+ * At the end functions returns accumulator
+ */
+const reduceFn = (array, callback, initial) => {
+  let accumulator = initial || array[0];
+
+  for (let i = initial ? 0 : 1; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+  return accumulator;
+};
 
 const everyFn = (array, callback) => {};
 
