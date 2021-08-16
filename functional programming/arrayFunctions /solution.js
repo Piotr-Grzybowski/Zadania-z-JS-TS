@@ -25,19 +25,21 @@ const mapFn = (array, callback) => {
  * Value of done shows us if iteration is finished or not
  * Value field has index and value that was in used array under that index
  */
-const entriesFn = (array) => {
+const entriesFn = array => {
   const newArray = [];
   for (let index = 0; index < array.length; index++) {
     newArray.push([index, array[index]]);
   }
 
-  const iterator = newArray[Symbol.iterator]();
-
-  return iterator;
+  return newArray[Symbol.iterator]();
 };
 
-//TODO
-//Create solution for entriesFn using generator
+/**
+* Solution of method entries() but using generator instead Symbol.iterator method
+ */
+function* entriesFnGen(array) {
+  for (let i = 0; i < array.length; i++) yield [i, array[i]];
+}
 
 /**
  * Filter() method works similar to map
