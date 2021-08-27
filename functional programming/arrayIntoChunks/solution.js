@@ -4,7 +4,18 @@
 * It means that array should be splitted into two chunks. First 4 elements long and other 6 elements long
  */
 function findChunksLength (arrayLength) {
-
+  let i = 0;
+  let chunksLengths = [];
+  while (i < arrayLength) {
+    let chunkLength = Math.floor(Math.random() * 4 + 4);
+    i += chunkLength;
+    chunksLengths.push(chunkLength);
+    if (i > arrayLength) {
+      chunksLengths = [];
+      i = 0;
+    }
+  }
+  return chunksLengths;
 }
 /**
 * Function takes an array and using above findsChunksLength function aggregate array into chunks from 4 to 7 elements long
@@ -13,3 +24,6 @@ function findChunksLength (arrayLength) {
 function aggregateArrayIntoChunks(array) {
 
 }
+
+
+findChunksLength(21);
