@@ -2,7 +2,7 @@
 
 According [Wikipedia][1]:
 
-[1]: <https://en.wikipedia.org/wiki/Functional_programming#:~:text=In%20computer%20science%2C%20functional%20programming,by%20applying%20and%20composing%20functions.&text=When%20a%20pure%20function%20is,state%20or%20other%20side%20effects.>
+[1]: <https://en.wikipedia.org/wiki/Functional_programming>
 
 > In computer science, functional programming is a programming paradigm where programs are constructed by applying and composing functions. It is a declarative programming paradigm in which function definitions are trees of expressions that map values to other values, rather than a sequence of imperative statements which update the running state of the program.
 
