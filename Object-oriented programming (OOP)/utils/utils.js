@@ -5,3 +5,6 @@ export function uuidv4() {
     return v.toString(16);
   });
 }
+export function getIndex(array, id) {
+  return array.findIndex(element => element.uuid === id);
+}
