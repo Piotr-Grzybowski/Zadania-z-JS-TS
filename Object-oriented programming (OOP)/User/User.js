@@ -1,5 +1,5 @@
 import { Validator } from '../utils/Validator.js';
-import {uuidv4} from '../utils/utils.js';
+import { uuidv4 } from '../utils/utils.js';
 
 class User {
   constructor({ firstName, lastName, dateOfBirth, password, sex, email }, accessLevel = 'user') {

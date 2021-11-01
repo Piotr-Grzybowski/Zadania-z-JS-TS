@@ -11,6 +11,7 @@ class CartItem {
     // - calculate discount based on price and discount percentage
     // - add product to category
     // - change name, price or discount
+}
 
 class Cart {
     // Should have: uuid, list of added items, discount in % for a cart, discount code
