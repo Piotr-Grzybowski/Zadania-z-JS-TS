@@ -9,6 +9,7 @@
 class Contact {
     // Should have: first name, last name, email address, date of modification and uuid
     // Should have methods that let us: update modification date, change name, last name or email address
+}
 
 class Group {
     // Should have: list of contacts that belong to the group, name of the group and uuid
@@ -16,8 +17,7 @@ class Group {
 }
 
 class AddressBook {
-// Should have: list of all contacts, list of all groups of contacts
-// Functionalities: searching for contact using phrase, add/remove/edit contact, add/remove/edit groups
-}
+    // Should have: list of all contacts, list of all groups of contacts
+    // Functionalities: searching for contact using phrase, add/remove/edit contact, add/remove/edit groups
 }
 ```
