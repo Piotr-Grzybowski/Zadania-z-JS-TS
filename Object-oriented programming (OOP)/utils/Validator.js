@@ -20,4 +20,7 @@ export class Validator {
   static isAccessLevel(accessLevel) {
     if (!(accessLevel === 'admin' || accessLevel === 'user')) throw new Error('User must be a regular user or admin. Please choose proper access level');
   }
+  static isNumber(number) {
+    if (!(typeof number === 'number')) throw new Error('Given argument must be a number');
+  }
 }
