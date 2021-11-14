@@ -1,14 +1,14 @@
 import User from "./User.js";
 
 class Booking {
-  constructor(userId, listOfBooks, penaltyPerDay = 10) {
+  constructor(userId, listOfBooks, finePerDay = 10) {
     if (listOfBooks.length === 0) throw new Error('List of borrowed books can\'t be empty');
     this.user = userId;
     this.listOfBorrowedBooks = listOfBooks;
-    this.penaltyPerDay = penaltyPerDay;
+    this.finePerDay = finePerDay;
     this.dateOfBorrow = new Date();
     this.dateOfReturn = new Date(this.dateOfBorrow.getTime() + (7 * (86400000))); // 86400000 is one day (24 hours) in milliseconds
-    this.totalPenaltyToPay = 0;
+    this.totalFineToPay = 0;
   }
   addBookToListOfBorrowed = function(bookId) {
     if (!this.dateOfBorrow.getDate() === new Date().getDate()) throw new Error('You can add new books to the booking only in the same day booking started');
@@ -20,8 +20,8 @@ class Booking {
   }
   returnABook = function(bookId) {
     this.removeBookFromListOfBorrowed(bookId);
-    const penalty = this.calculatePenalty();
-    this.totalPenaltyToPay += penalty;
+    const fine = this.calculateFine();
+    this.totalFineToPay += fine;
   }
   checkIfBookExist = function(bookId) {
     if (this.listOfBorrowedBooks.indexOf(bookId) !== -1) return true;
@@ -31,11 +31,11 @@ class Booking {
     if (!this.checkIfBookExist) throw new Error('There is no such a book in this booking!');
     return this.listOfBorrowedBooks.indexOf(bookId);
   }
-  calculatePenalty = function() {
+  calculateFine = function() {
     const today = new Date();
     if (today > this.dateOfReturn) {
       const days = Math.floor((today.getTime() - this.dateOfReturn.getTime()) / 86400000); // 86400000 is one day (24 hours) in milliseconds
-      return days * this.penaltyPerDay;
+      return days * this.finePerDay;
     }
     return 0;
   }
