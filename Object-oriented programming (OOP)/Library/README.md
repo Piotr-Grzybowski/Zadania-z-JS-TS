@@ -31,7 +31,6 @@ class Library {
 
     // Functionalities:
     // - add and remove book to/from list of books
-    // - create and remove books
     // - borrow book for given user
     // - return borrowed books
     // - create and remove users
