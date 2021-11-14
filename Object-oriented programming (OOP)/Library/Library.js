@@ -34,6 +34,21 @@ class Library {
     const indexOfBook = getIndex(this.listOfBooks, book.uuid);
     return this.listOfBooks[indexOfBook].quantity();
   }
+  // User part in library
+  addUserToTheList = function(user) {
+    if (!user instanceof User) throw new Error('Given user must be an instance of user!');
+    if (!checkIfUserExist(user.uuid)) throw new Error('Given user already exist');
+    this.listOfUsers.push(user);
+  }
+  removeUserFromList = function(userId) {
+    if (!checkIfUserExist(user.uuid)) throw new Error('Given user doesn\'t exist');
+    const indexOfUser = getIndex(this.listOfUsers, userId);
+    this.listOfUsers.splice(indexOfUser, 1);
+  }
+  checkIfUserExist = function(userId) {
+    if (getIndex(this.listOfUsers, userId) === -1) return false;
+    return true;
+  }
 
 }
 
