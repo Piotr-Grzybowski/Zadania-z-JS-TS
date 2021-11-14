@@ -14,9 +14,12 @@ class Book {
     this.uuid = uuidv4();
     this.quantity = quantity;
   }
-  changeQuantity(newQuantity) {
-    Validator.isNumber(newQuantity);
-    this.quantity = newQuantity;
+  set quantity(amount) {
+    Validator.isNumber(amount);
+    this.quantity += amount;
+  }
+  get quantity() {
+    return this.quantity;
   }
 }
 

@@ -35,7 +35,7 @@ class Booking {
     const today = new Date();
     if (today > this.dateOfReturn) {
       const days = Math.floor((today.getTime() - this.dateOfReturn.getTime()) / 86400000); // 86400000 is one day (24 hours) in milliseconds
-      return days * this.penalty;
+      return days * this.penaltyPerDay;
     }
     return 0;
   }
